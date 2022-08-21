@@ -1,4 +1,4 @@
-package com.jett.manialoader;
+package com.jett.manialoadermtk;
 
 import android.Manifest;
 import android.app.Activity;
@@ -127,9 +127,8 @@ public class RSDKv5 extends GameActivity {
         if (ContextCompat.checkSelfPermission(c, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
         }
-        String p = Environment.getExternalStorageDirectory().getAbsolutePath() + "/RSDK/v5";
-        //getExternalStorageDirectory is deprecated. I do not care.
-        //rmg 20220610 i'm a changed woman EDIT: nvm not yet
+        String p = Environment.getExternalStorageDirectory().getAbsolutePath() + "/games/jett/manialoader";
+        //i mostly stole most of the code xd
         new File(p).mkdirs();
         try {
             new File(p + "../.nomedia").createNewFile();
